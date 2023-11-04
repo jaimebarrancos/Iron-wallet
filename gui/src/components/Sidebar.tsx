@@ -25,6 +25,7 @@ import {
   QuickWalletSelect,
   SettingsButton,
   Txs,
+  Snapshots,
 } from "./";
 
 export const TABS = [
@@ -52,6 +53,12 @@ export const TABS = [
     name: "Connections",
     component: Connections,
     icon: OnlinePredictionSharp,
+  },
+  {
+    path: "snapshots",
+    name: "Snapshots",
+    component: Snapshots,
+    icon: Receipt,
   },
 ];
 
