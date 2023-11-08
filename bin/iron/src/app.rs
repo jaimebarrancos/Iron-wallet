@@ -70,7 +70,9 @@ impl IronApp {
                 iron_connections::commands::connections_set_affinity,
                 iron_sync::commands::sync_alchemy_is_network_supported,
                 iron_sync::commands::sync_get_native_balance,
-                iron_simulator::commands::simulator_run
+                iron_simulator::commands::simulator_run,
+                iron_snapshots::commands::create_snapshot
+
             ])
             .on_window_event(on_window_event)
             .menu(menu::build())
@@ -121,6 +123,7 @@ async fn init(app: &tauri::App) -> AppResult<()> {
     iron_wallets::init(resource(app, "wallets.json")).await;
     iron_networks::init(resource(app, "networks.json")).await;
     iron_forge::init().await?;
+
 
     // automatically open devtools if env asks for it
     #[cfg(feature = "debug")]

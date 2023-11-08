@@ -103,6 +103,7 @@ impl Handler {
         provider_handler!("eth_getLogs");
 
         // handle internally
+        // JAIME eu vou querer o id, logo preciso de o guardar no meu backend aqui
         self_handler!("eth_accounts", Self::accounts);
         self_handler!("eth_requestAccounts", Self::accounts);
         self_handler!("eth_chainId", Self::chain_id);

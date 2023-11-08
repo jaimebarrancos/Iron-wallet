@@ -31,6 +31,7 @@ members = [
   "crates/broadcast",
   "crates/exchange-rates",
   "crates/simulator",
+  "crates/snapshots",
 ]
 default-members = ["bin/iron"]
 
@@ -55,6 +56,8 @@ iron-sync-alchemy = { path = "crates/sync/alchemy" }
 iron-broadcast = { path = "crates/broadcast" }
 iron-tracing = { path = "crates/tracing" }
 iron-exchange-rates = { path = "crates/exchange-rates" }
+iron-snapshots = { path = "crates/snapshots" }
+
 tokio = { version = "1.32.0", features = ["full", "sync"] }
 thiserror = "1.0.40"
 ethers = { version = "2.0.10", features = ["ws"] }

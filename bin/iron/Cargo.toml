@@ -25,6 +25,7 @@ iron-tracing = { workspace = true }
 iron-exchange-rates = { workspace = true }
 iron-broadcast = { workspace = true }
 iron-simulator = { workspace = true }
+iron-snapshots = { workspace = true }
 
 serde = { workspace = true }
 serde_json = { workspace = true }

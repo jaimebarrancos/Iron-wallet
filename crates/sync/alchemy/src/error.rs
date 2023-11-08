@@ -2,9 +2,6 @@ use ethers::{providers::JsonRpcError, types::H256};
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
-    #[error(transparent)]
-    DB(#[from] iron_db::Error),
-
     #[error("IO error: {0}")]
     IO(#[from] std::io::Error),
 

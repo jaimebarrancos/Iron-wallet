@@ -3646,6 +3646,7 @@ dependencies = [
  "iron-rpc",
  "iron-settings",
  "iron-simulator",
+ "iron-snapshots",
  "iron-sync",
  "iron-tracing",
  "iron-types",
@@ -3883,6 +3884,25 @@ dependencies = [
  "tauri",
  "thiserror",
  "tokio",
+]
+
+[[package]]
+name = "iron-snapshots"
+version = "1.0.0"
+dependencies = [
+ "base64 0.21.3",
+ "ethers",
+ "futures",
+ "futures-util",
+ "iron-connections",
+ "pretty_assertions",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tauri",
+ "thiserror",
+ "tokio",
+ "url",
 ]
 
 [[package]]

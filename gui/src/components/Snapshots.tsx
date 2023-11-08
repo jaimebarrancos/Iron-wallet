@@ -27,8 +27,7 @@ import { useEventListener } from "@/hooks";
 import { useNetworks, useWallets } from "@/store";
 import { Paginated, Pagination, Tx } from "@/types";
 import { AddressView, ContextMenu, Panel } from "./";
-import { CalldataView } from "./Calldata";
-import { Datapoint } from "./Datapoint";
+
 
 export function Snapshots() {
     /*! 
@@ -44,14 +43,7 @@ export function Snapshots() {
         pagination = last;
         pagination.page = (pagination.page || 0) + 1;
       }
-  
-      invoke<Paginated<Tx>>("db_get_transactions", {
-        address: account,
-        chainId,
-        pagination,
-      }).then((page) => setPages([...pages, page]));
-    }, [account, chainId, pages, setPages]);
-  
+
     useEffect(() => {
       if (pages.length == 0) loadMore();
     }, [pages, loadMore]);
@@ -65,22 +57,20 @@ export function Snapshots() {
   
     if (!account || !chainId) return null;
       */
-    const loader = (
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-        key="loader"
-      >
-        <CircularProgress />
-      </Box>
-    );
-  
+
+
+    function recordSnapshot(){      
+      invoke('create_snapshot', { invokeMessage: 'Hello!' })
+      //}).then();
+    };
+
     return (
       <Panel>
         <>
             <div>HELLOOO</div>
+            <button
+              onClick={() => recordSnapshot()}
+            >BUTTON print</button>
         </>
       </Panel>
     );
